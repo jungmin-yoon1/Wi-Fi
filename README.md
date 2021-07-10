@@ -3,10 +3,10 @@
 #### DCF 동작 개요
 - 단말들은 AP로의 데이터 전송을 위해 채널 상태를 지속적으로 센싱
 - 채널이 DIFS (Distributed Interframe Space)동안 idle 상태이면, 단말들은 경쟁을 통한 데이터 전송을 시도
-- DCF는 exponential backoff scheme을 사용하기 때문에 각 station들은 contention window(W)를 활용하여 [0, W-1] 내에서 임의의 값을 uniform하게 선택하고 backoff 값으로써 활용
+- DCF는 exponential backoff scheme을 사용하기 때문에 각 단말들은 contention window(W)를 활용하여 [0, W-1] 내에서 임의의 값을 uniform하게 선택하고 backoff 값으로써 활용
 - W는 특정 데이터의 최초 전송 시에 minimum contention window 값 (CWmin)을 가지며, 전송 실패 시 마다 maximum contention window 값(CWmax)까지 2배씩 증가
 - 각 단말들은 DIFS 이후에 backoff 값을 backoff slot 마다 1씩 감소시킴, Backoff 값이 0이 되면 해당 단말은 데이터 전송을 시도
-- 채널이 특정 단말에 의해 점유되어 busy 상태로 전환하는 경우, 채널을 점유하고 있지 않은 단말들은 backoff 값의 감소를 중지하고 채널상태를 센싱, 채널이 다시 DIFS 시간 동안 idle 상태를 유지하는 경우 station들은 다시 backoff 값을 감소시킬 수 있으며 0이 되면 데이터 전송을 시도
+- 채널이 특정 단말에 의해 점유되어 busy 상태로 전환하는 경우, 채널을 점유하고 있지 않은 단말들은 backoff 값의 감소를 중지하고 채널상태를 센싱, 채널이 다시 DIFS 시간 동안 idle 상태를 유지하는 경우 단말들은 다시 backoff 값을 감소시킬 수 있으며 0이 되면 데이터 전송을 시도
 - 1개의 단말만이 backoff값 0에 도달하여 데이터를 전송하는 경우 AP는 충돌 없이 데이터를 수신하며, SIFS (Short Interframe Space) 이후에 데이터를 전송한 단말의 정보를 포함한 ACK (Acknowledgement)를 전송함으로써 성공적으로 데이터 전송이 완료되었음을 알림
 - 2개 이상의 단말이 동시에 데이터를 전송하면 충돌이 발생하게 되며, AP는 충돌로 인해 정상적으로 데이터를 수신할 수 없기 때문에 ACK를 전송하지 않음. 데이터를 전송한 단말은 미리 설정된 ACK-timeout 시간 동안 ACK를 수신하지 못하면 충돌이 발생한 것으로 판단
 - 충돌이 발생한 단말들은 contention window 크기를 증가시키고 증가된 범위 내에서 backoff 값을 선택,단말이 성공적으로 데이터를 전송하는 경우에는 contention window 크기가 초기 값(CWmin)으로 설정됨
