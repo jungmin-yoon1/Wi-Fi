@@ -29,7 +29,7 @@
 - 만약 자신의 주소와 일치하지 않는 경우 CTS에 포함된 총 채널 점유 시간 동안 채널이 busy한 것으로 판단
 - 단말의 데이터 전송 이후에 AP는 ACK를 전송하며, 이후 단말의 데이터 전송 과정은 반복
 
-<img src="https://user-images.githubusercontent.com/58179712/125152182-f313e780-e185-11eb-8298-96073b797638.PNG"  width="800">
+<img src="https://user-images.githubusercontent.com/58179712/125152182-f313e780-e185-11eb-8298-96073b797638.PNG"  width="750">
 
 
 #### Simulation Result
