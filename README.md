@@ -18,7 +18,7 @@
 - ACK 전송 이후에는 채널이 idle 상태로 전환되며, DIFS 동안 채널이 idle 상태인 경우 단말들은 다시 데이터 전송을 시도
 - 만약 2개 이상의 단말이 데이터를 전송하게 되어 충돌이 발생하면, 데이터 전송 시간 동안 채널을 점유
 
-
+<img src="https://user-images.githubusercontent.com/58179712/125152180-f1e2ba80-e185-11eb-95af-60dbe42ac3df.PNG"  width="600">
 
 
 #### RTS/CTS access
@@ -28,3 +28,11 @@
 - 단말들은 CTS에 포함된 주소 정보와 자신의 주소를 비교하며, 자신의 주소와 일치하는 경우 데이터를 전송
 - 만약 자신의 주소와 일치하지 않는 경우 CTS에 포함된 총 채널 점유 시간 동안 채널이 busy한 것으로 판단
 - 단말의 데이터 전송 이후에 AP는 ACK를 전송하며, 이후 단말의 데이터 전송 과정은 반복
+
+<img src="https://user-images.githubusercontent.com/58179712/125152182-f313e780-e185-11eb-8298-96073b797638.PNG"  width="800">
+
+
+#### Simulation Result
+
+<img src="https://user-images.githubusercontent.com/58179712/125152660-0eccbd00-e189-11eb-86cb-8515809bfcc7.PNG"  width="500">
+
