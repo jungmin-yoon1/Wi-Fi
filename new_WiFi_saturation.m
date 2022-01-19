@@ -22,7 +22,7 @@ Propagation_Delay=1;  %주어진 시간 변수
 Slot_Time=50;
 SIFS=28;
 DIFS=128;
-ACK_Timeout=300;
+CTS_Timeout=300;
 
 
 %Total_Time_b=zeros(1,length(W_b));     %전체 소요 시간
@@ -58,8 +58,8 @@ for simul_rc=1:length(W_rc)
                     else
                         backoff(col_case(i))=randi([0,W_rc(simul_rc)*2^(CWcase(col_case(i)))-1]);
                     end
-                    Total_Time_rc(simul_rc)=Total_Time_rc(simul_rc)+RTS+Propagation_Delay;
                 end
+                Total_Time_rc(simul_rc)=Total_Time_rc(simul_rc)+RTS+Propagation_Delay+CTS_Timeout;
 
             else %충돌 안난 경우
                 suc_pkt_rc=suc_pkt_rc+1;
